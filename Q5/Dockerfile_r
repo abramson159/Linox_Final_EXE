@@ -1,0 +1,14 @@
+# שימוש בתמונה בסיסית של R
+FROM r-base:latest
+
+# התקנת חבילות R
+RUN R -e "install.packages(c('dplyr', 'ggplot2'), repos='http://cran.r-project.org')"
+
+# יצירת תיקיית עבודה
+WORKDIR /app
+
+# העתקת קבצים לתוך הקונטיינר
+COPY animal_data.csv r_analysis.R ./
+
+# הפעלת סקריפט ה-R
+CMD ["Rscript", "r_analysis.R"]

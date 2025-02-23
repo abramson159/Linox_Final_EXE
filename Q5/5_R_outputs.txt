@@ -1,0 +1,28 @@
+🔍 **R Analysis Results**
+
+
+1️⃣ Mean Weight by Species:
+# A tibble: 3 × 2
+  Species Mean_Weight
+  <chr>         <dbl>
+1 OT             21.8
+2 PF              9  
+3 <NA>          117. 
+
+2️⃣ Total Weight by Species:
+# A tibble: 3 × 2
+  Species Total_Weight
+  <chr>          <int>
+1 OT               109
+2 PF                27
+3 <NA>             467
+
+3️⃣ Generating Weight Distribution Plot by Sex...
+
+4️⃣ Number of Records per Species:
+# A tibble: 3 × 2
+  Species Record_Count
+  <chr>          <int>
+1 OT                 5
+2 PF                 3
+3 <NA>               4
