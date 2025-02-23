@@ -1,0 +1,32 @@
+# שימוש בתמונה בסיסית של Ubuntu
+FROM ubuntu:latest
+
+# עדכון והתקנת הכלים הנדרשים
+RUN apt update && apt install -y \
+    python3 \
+    python3-pip \
+    python3-venv \
+    sqlite3 \
+    bash \
+    git \
+    && apt clean
+
+# יצירת תיקיית עבודה
+WORKDIR /app
+
+# יצירת סביבת venv והתקנת חבילות
+RUN python3 -m venv /app/venv && \
+    /app/venv/bin/pip install --upgrade pip && \
+    /app/venv/bin/pip install pandas
+
+# הגדרת הסביבה כברירת מחדל
+ENV PATH="/app/venv/bin:$PATH"
+
+# העתקת קבצים לתוך הקונטיינר
+COPY animal_data.csv qs_script.sh ./
+
+# מתן הרשאות לסקריפט
+RUN chmod +x qs_script.sh
+
+# הפעלת הסקריפט
+CMD ["bash", "./qs_script.sh"]

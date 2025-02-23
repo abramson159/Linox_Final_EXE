@@ -1,0 +1,11 @@
+
+📊 Animal Data Management System
+1. Create CSV by name
+2. Display CSV with row index
+3. Add new row
+4. Display species and AVG weight
+5. Filter by species and sex
+6. Save output to new CSV
+7. Delete row by index
+8. Update weight by row index
+9. Exit
